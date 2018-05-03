@@ -33,7 +33,7 @@ function! test#python#djangotest#build_args(args) abort
 endfunction
 
 function! test#python#djangotest#executable() abort
-  return 'python manage.py test'
+  return 'python manage.py test --settings=' . DotenvGet("DJANGO_TEST_SETTINGS_MODULE")
 endfunction
 
 function! s:get_import_path(filepath) abort
